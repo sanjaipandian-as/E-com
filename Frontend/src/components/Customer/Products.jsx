@@ -22,7 +22,7 @@ const Products = ({ filters = defaultFilters }) => {
     const [cartItems, setCartItems] = useState([]);
 
     const isLoggedIn = useMemo(() => {
-        return !!localStorage.getItem('token');
+        return !!(localStorage.getItem('token') || sessionStorage.getItem('token'));
     }, []);
 
     useEffect(() => {

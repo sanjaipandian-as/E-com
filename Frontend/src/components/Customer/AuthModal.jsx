@@ -137,8 +137,8 @@ export default function AuthModal() {
 
         const storage = rememberMe ? localStorage : sessionStorage;
         const secondaryStorage = rememberMe ? sessionStorage : localStorage;
-        const existingRole = sessionStorage.getItem('userRole') || localStorage.getItem('userRole');
-        const token = sessionStorage.getItem('token') || localStorage.getItem('token');
+        const existingRole = sessionStorage.getItem('userRole') || (localStorage.getItem('userRole') || sessionStorage.getItem('userRole'));
+        const token = sessionStorage.getItem('token') || (localStorage.getItem('token') || sessionStorage.getItem('token'));
 
         if (token && (!existingRole || existingRole === 'undefined')) {
             sessionStorage.removeItem('token');

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FaSearch, FaBell, FaUser, FaSignOutAlt, FaBars, FaTimes, FaHome, FaShoppingBag, FaCog } from 'react-icons/fa';
 import { BsFillBagHeartFill } from 'react-icons/bs';
 import { useNavigate, useLocation } from 'react-router-dom';
+import HeyAzhagiLogo from './HeyAzhagiLogo';
 import { toast } from 'react-toastify';
 import API from '../../../api';
 
@@ -154,9 +155,9 @@ const Searchbar = () => {
     };
 
     useEffect(() => {
-        const token = sessionStorage.getItem('token') || localStorage.getItem('token');
-        const user = sessionStorage.getItem('user') || localStorage.getItem('user');
-        const role = sessionStorage.getItem('userRole') || localStorage.getItem('userRole');
+        const token = sessionStorage.getItem('token') || (localStorage.getItem('token') || sessionStorage.getItem('token'));
+        const user = sessionStorage.getItem('user') || (localStorage.getItem('user') || sessionStorage.getItem('user'));
+        const role = sessionStorage.getItem('userRole') || (localStorage.getItem('userRole') || sessionStorage.getItem('userRole'));
         const loginTime = sessionStorage.getItem('loginTime') || localStorage.getItem('loginTime');
 
         if (token && user) {
@@ -189,7 +190,7 @@ const Searchbar = () => {
 
         const checkSessionInterval = setInterval(() => {
             const loginTime = sessionStorage.getItem('loginTime') || localStorage.getItem('loginTime');
-            const token = sessionStorage.getItem('token') || localStorage.getItem('token');
+            const token = sessionStorage.getItem('token') || (localStorage.getItem('token') || sessionStorage.getItem('token'));
 
             if (token && loginTime) {
                 const currentTime = new Date().getTime();
@@ -417,7 +418,7 @@ const Searchbar = () => {
 
     const fetchNotifications = async () => {
         try {
-            const token = localStorage.getItem('token');
+            const token = (localStorage.getItem('token') || sessionStorage.getItem('token'));
             if (!token) return;
 
             setLoadingNotifications(true);
@@ -503,7 +504,7 @@ const Searchbar = () => {
 
     return (
         <div
-            className={`z-50 transition-all duration-300 sticky top-0 border-b shadow-xs py-2 text-black bg-dark-pale-green ${isScrolled ? 'shadow-xs border-black/15' : 'border-black/15'}`}
+            className={`z-50 transition-all duration-300 sticky top-0 border-b shadow-xs py-2 text-black bg-[#fffaf0] ${isScrolled ? 'shadow-xs border-black/15' : 'border-black/15'}`}
         >
             <div className="px-4 sm:px-6 md:px-8 xl:px-10 w-full flex items-center justify-between gap-3 min-h-[56px]">
 
@@ -520,10 +521,8 @@ const Searchbar = () => {
                             className="w-10 h-10 object-cover shadow-md ring-2 ring-gold-champagne/30 rounded-full shrink-0 transition-transform duration-500 hover:rotate-12"
                         />
                         <span className="flex flex-col items-start text-left min-w-0">
-                            <span className="font-serif text-base sm:text-lg font-bold tracking-[0.08em] uppercase text-black leading-none">
-                                Hey Azhagi
-                            </span>
-                            <span className="hidden sm:block text-[7px] font-bold tracking-[0.32em] uppercase text-black mt-1.5">
+                            <HeyAzhagiLogo className="h-10 sm:h-12 w-auto" />
+                            <span className="block text-[7px] font-bold tracking-[0.32em] uppercase text-black mt-1.5">
                                 anti tarnish fashion Jewellery
                             </span>
                         </span>
@@ -763,7 +762,7 @@ const Searchbar = () => {
             </div>
             {/* Mobile Search Bar - Visible on smaller screens */}
             {(showSearchBar || searchQuery.trim()) && (
-                <div className="lg:hidden px-4 sm:px-6 pb-2.5 pt-2 bg-dark-pale-green" ref={mobileSearchRef}>
+                <div className="lg:hidden px-4 sm:px-6 pb-2.5 pt-2 bg-[#fffaf0]" ref={mobileSearchRef}>
                     <div className="relative">
                         <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-black w-[12px] h-[12px] z-10" />
                         <input

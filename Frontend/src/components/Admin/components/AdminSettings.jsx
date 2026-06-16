@@ -29,7 +29,7 @@ const AdminSettings = ({ onNavigate }) => {
 
     useEffect(() => {
         // Load admin data
-        const user = localStorage.getItem('user');
+        const user = (localStorage.getItem('user') || sessionStorage.getItem('user'));
         if (user) {
             try {
                 const userData = JSON.parse(user);

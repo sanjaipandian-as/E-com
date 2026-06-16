@@ -2,6 +2,7 @@ import { FiHeart, FiStar, FiAward, FiSmile } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import Topbar from '../Topbar';
 import Footer from '../Footer';
+import HeyAzhagiLogo from '../HeyAzhagiLogo';
 
 const AboutUs = () => {
     const navigate = useNavigate();
@@ -16,12 +17,15 @@ const AboutUs = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(197,168,128,0.15),transparent_45%)]" />
                     <div className="max-w-4xl mx-auto relative z-10 space-y-4">
                         <p className="text-gold-lustrous text-xs font-bold uppercase tracking-[0.3em] animate-fade-in">Established with Love</p>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-serif flex items-center justify-center gap-3 flex-wrap">
-                            <span className="bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#AA771C] bg-clip-text text-transparent font-serif uppercase tracking-wider font-extrabold">
-                                Hey Azhagi
+                        <div className="flex flex-col items-center justify-center gap-2">
+                            <h1 className="flex items-center justify-center gap-3 flex-wrap m-0">
+                                <HeyAzhagiLogo className="h-32 sm:h-40 md:h-48 w-auto" />
+                                <span className="text-gold-lustrous font-serif text-4xl sm:text-5xl md:text-6xl font-bold">— Our Story ✨</span>
+                            </h1>
+                            <span className="text-[12px] sm:text-sm font-bold tracking-[0.32em] uppercase text-gold-lustrous/80">
+                                anti tarnish fashion Jewellery
                             </span>
-                            <span className="text-gold-lustrous">— Our Story ✨</span>
-                        </h1>
+                        </div>
                         <p className="text-stone-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-sans pt-2">
                             "Because true beauty is not just about what you wear… It’s about how confidently you shine."
                         </p>

@@ -207,7 +207,7 @@ const CategoriesSpecificpage = () => {
 
     const fetchCart = async () => {
         try {
-            const token = localStorage.getItem('token');
+            const token = (localStorage.getItem('token') || sessionStorage.getItem('token'));
             if (!token) return;
 
             const response = await API.get('/cart');
@@ -219,7 +219,7 @@ const CategoriesSpecificpage = () => {
 
     const fetchWishlist = async () => {
         try {
-            const token = localStorage.getItem('token');
+            const token = (localStorage.getItem('token') || sessionStorage.getItem('token'));
             if (!token) return;
 
             const response = await API.get('/wishlist');
@@ -336,7 +336,7 @@ const CategoriesSpecificpage = () => {
     }, []);
 
     const addToCart = useCallback(async (product) => {
-        const token = localStorage.getItem('token');
+        const token = (localStorage.getItem('token') || sessionStorage.getItem('token'));
         if (!token) {
             navigate('/Login');
             return;
@@ -367,7 +367,7 @@ const CategoriesSpecificpage = () => {
     }, [cartItems, navigate]);
 
     const addToWishlist = useCallback(async (product) => {
-        const token = localStorage.getItem('token');
+        const token = (localStorage.getItem('token') || sessionStorage.getItem('token'));
         if (!token) {
             navigate('/Login');
             return;

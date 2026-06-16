@@ -313,7 +313,7 @@ const Payment = () => {
                 return;
             }
 
-            const userStr = localStorage.getItem('user');
+            const userStr = (localStorage.getItem('user') || sessionStorage.getItem('user'));
             const userData = userStr ? JSON.parse(userStr) : {};
 
             const options = {

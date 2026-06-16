@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* High-Authority Branding - Plus Jakarta Sans */
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
-  --font-plus: 'Plus Jakarta Sans', sans-serif;
+  /* High-Authority Branding - Lato */
+  --font-sans: 'Lato', sans-serif;
+  --font-plus: 'Lato', sans-serif;
 
   /* Financial & Premium Numerical - Outfit */
   --font-outfit: 'Outfit', sans-serif;
 
-  /* Precision UI - Inter */
-  --font-inter: 'Inter', sans-serif;
+  /* Precision UI - Lato */
+  --font-inter: 'Lato', sans-serif;
 
   /* Premium Luxury Brand Colors */
   --color-emerald-deep: #0b1410;
@@ -40,7 +40,7 @@
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: #faf9f6;
   color: #1c1c1c;
   -webkit-font-smoothing: antialiased;
@@ -53,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Lato', sans-serif;
   letter-spacing: -0.01em;
 }
 

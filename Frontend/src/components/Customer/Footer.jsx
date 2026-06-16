@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../../../api';
+import HeyAzhagiLogo from './HeyAzhagiLogo';
 import {
     FaFacebookF,
     FaTwitter,
@@ -98,33 +99,9 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-emerald-deep text-[#f7f5f0] border-t border-gold-champagne/20 font-outfit relative">
+        <footer className="bg-[#fffaf0] text-slate-900 border-t border-gold-champagne/20 font-outfit relative">
             {/* Ambient luxury background glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(197,168,128,0.03),transparent_40%)] pointer-events-none" />
-
-            {/* Premium Features Bar */}
-            <div className="hidden lg:block border-b border-gold-champagne/10 bg-emerald-dark">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
-                            { icon: FaGem, title: 'Lifetime Anti-Tarnish', desc: 'Crafted with premium durable alloys' },
-                            { icon: FaTruck, title: 'Fully Insured Shipping', desc: 'Complimentary delivery on all orders' },
-                            { icon: FaGift, title: 'Signature Packaging', desc: 'Arrives in our custom velvet box' },
-                            { icon: FaShieldAlt, title: 'Secure Checkouts', desc: 'Fully encrypted payment processing' }
-                        ].map((feature, index) => (
-                            <div key={index} className="flex items-center gap-4 group">
-                                <div className="w-12 h-12 rounded-full bg-gold-champagne/10 flex items-center justify-center flex-shrink-0 border border-gold-champagne/20 transition-all duration-300 group-hover:bg-gold-champagne/20">
-                                    <feature.icon className="w-5 h-5 text-gold-champagne" />
-                                </div>
-                                <div>
-                                    <p className="font-semibold text-xs text-white tracking-widest uppercase">{feature.title}</p>
-                                    <p className="text-2xs text-[#a3b3ac] mt-0.5">{feature.desc}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
 
             {/* Main Footer Links */}
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -132,15 +109,15 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="lg:col-span-2 pb-6 lg:pb-0 border-b border-gold-champagne/10 lg:border-none">
                         <div className="mb-6">
-                            <h2 className="mb-4 flex items-center gap-2 flex-wrap">
-                                <span
-                                    className="text-2xl font-bold tracking-[0.05em] uppercase text-gold-champagne leading-none"
-                                    style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                                >
-                                    Hey Azhagi
+                            <div className="mb-4 flex flex-col items-start">
+                                <h2 className="flex items-center gap-2 flex-wrap m-0 mb-2">
+                                    <HeyAzhagiLogo className="h-20 sm:h-24 w-auto" />
+                                </h2>
+                                <span className="text-[10px] font-bold tracking-[0.32em] uppercase text-gold-champagne/80">
+                                    anti tarnish fashion Jewellery
                                 </span>
-                            </h2>
-                            <p className="text-[#a3b3ac] text-sm leading-relaxed max-w-sm">
+                            </div>
+                            <p className="text-slate-600 text-sm leading-relaxed max-w-sm">
                                 Elevating everyday elegance with our meticulously designed, premium anti-tarnish jewelry. Discover pieces that celebrate your inner brilliance.
                             </p>
                         </div>
@@ -159,7 +136,7 @@ const Footer = () => {
                                     <button
                                         key={index}
                                         aria-label={social.label}
-                                        className={`w-9 h-9 rounded-full bg-transparent text-[#a3b3ac] border border-gold-champagne/20 flex items-center justify-center transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-1 focus:ring-gold-champagne ${social.color}`}
+                                        className={`w-9 h-9 rounded-full bg-transparent text-slate-600 border border-gold-champagne/20 flex items-center justify-center transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-1 focus:ring-gold-champagne ${social.color}`}
                                     >
                                         <social.icon className="w-3.5 h-3.5" />
                                     </button>
@@ -187,7 +164,7 @@ const Footer = () => {
                                 <li key={index}>
                                     <button
                                         onClick={() => navigate(link.path)}
-                                        className="text-[#a3b3ac] hover:text-gold-lustrous transition-all duration-200 text-xs font-medium uppercase tracking-[0.1em] hover:translate-x-1 inline-block transform focus:outline-none"
+                                        className="text-slate-600 hover:text-gold-lustrous transition-all duration-200 text-xs font-medium uppercase tracking-[0.1em] hover:translate-x-1 inline-block transform focus:outline-none"
                                     >
                                         {link.name}
                                     </button>
@@ -215,7 +192,7 @@ const Footer = () => {
                                 <li key={index}>
                                     <button
                                         onClick={() => navigate(link.path)}
-                                        className="text-[#a3b3ac] hover:text-gold-lustrous transition-all duration-200 text-xs font-medium uppercase tracking-[0.1em] hover:translate-x-1 inline-block transform focus:outline-none"
+                                        className="text-slate-600 hover:text-gold-lustrous transition-all duration-200 text-xs font-medium uppercase tracking-[0.1em] hover:translate-x-1 inline-block transform focus:outline-none"
                                     >
                                         {link.name}
                                     </button>
@@ -241,7 +218,7 @@ const Footer = () => {
                             }`}>
                             <li className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="w-4 h-4 text-gold-champagne mt-1 flex-shrink-0" />
-                                <span className="text-[#a3b3ac] text-xs leading-relaxed uppercase tracking-[0.05em]">
+                                <span className="text-slate-600 text-xs leading-relaxed uppercase tracking-[0.05em]">
                                     45 Grand Avenue,<br />
                                     Luxury District, Chennai,<br />
                                     Tamil Nadu, India - 600002
@@ -251,7 +228,7 @@ const Footer = () => {
                                 <FaPhone className="w-4 h-4 text-gold-champagne flex-shrink-0" />
                                 <a
                                     href="tel:+919876543210"
-                                    className="text-[#a3b3ac] hover:text-gold-lustrous text-xs uppercase tracking-[0.05em] transition-colors focus:outline-none"
+                                    className="text-slate-600 hover:text-gold-lustrous text-xs uppercase tracking-[0.05em] transition-colors focus:outline-none"
                                 >
                                     +91 98765 43210
                                 </a>
@@ -260,7 +237,7 @@ const Footer = () => {
                                 <FaEnvelope className="w-4 h-4 text-gold-champagne flex-shrink-0" />
                                 <a
                                     href="mailto:concierge@heyazhagi.com"
-                                    className="text-[#a3b3ac] hover:text-gold-lustrous text-xs uppercase tracking-[0.05em] transition-colors focus:outline-none"
+                                    className="text-slate-600 hover:text-gold-lustrous text-xs uppercase tracking-[0.05em] transition-colors focus:outline-none"
                                 >
                                     concierge@heyazhagi.com
                                 </a>
@@ -271,13 +248,13 @@ const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gold-champagne/5 bg-emerald-dark">
+            <div className="border-t border-gold-champagne/5 bg-transparent">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p className="text-xs text-[#a3b3ac] text-center md:text-left">
+                        <p className="text-xs text-slate-600 text-center md:text-left">
                             © {currentYear} <span className="text-gold-lustrous font-semibold">HA</span>. All rights reserved.
                         </p>
-                        <p className="text-[10px] text-[#a3b3ac]/50 uppercase tracking-widest text-center md:text-right">
+                        <p className="text-[10px] text-slate-600/50 uppercase tracking-widest text-center md:text-right">
                             Handcrafted Luxury | Made with ❤️ in India
                         </p>
                     </div>
@@ -285,7 +262,7 @@ const Footer = () => {
             </div>
 
             {/* Tiny spacer to avoid blocking of bottom menu on mobile view */}
-            <div className="h-16 md:hidden bg-[#070b09]"></div>
+            <div className="h-16 md:hidden bg-[#fffaf0]"></div>
         </footer>
     );
 };
