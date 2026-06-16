@@ -24,7 +24,7 @@ const Wishlist = () => {
 
     const fetchWishlist = async () => {
         try {
-            const token = localStorage.getItem('token');
+            const token = (localStorage.getItem('token') || sessionStorage.getItem('token'));
             if (!token) {
                 navigate('/Login');
                 return;
@@ -66,7 +66,7 @@ const Wishlist = () => {
 
     const fetchCart = async () => {
         try {
-            const token = localStorage.getItem('token');
+            const token = (localStorage.getItem('token') || sessionStorage.getItem('token'));
             if (!token) return;
 
             const response = await API.get('/cart');

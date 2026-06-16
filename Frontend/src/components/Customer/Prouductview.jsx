@@ -60,7 +60,7 @@ const Productview = () => {
     const [wishlistItems, setWishlistItems] = useState([]);
 
     // Auth Check
-    const isLoggedIn = !!localStorage.getItem('token');
+    const isLoggedIn = !!(localStorage.getItem('token') || sessionStorage.getItem('token'));
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -95,7 +95,7 @@ const Productview = () => {
                     const reviewsData = Array.isArray(results[2].value.data) ? results[2].value.data : [];
                     setReviews(reviewsData);
                     if (isLoggedIn) {
-                        const user = localStorage.getItem('user');
+                        const user = (localStorage.getItem('user') || sessionStorage.getItem('user'));
                         if (user) {
                             const userId = JSON.parse(user)?._id;
                             setUserReview(reviewsData.find(r => r.customerId?._id === userId));
@@ -199,7 +199,7 @@ const Productview = () => {
             setReviews(res.data);
 
             // Set userReview
-            const user = localStorage.getItem('user');
+            const user = (localStorage.getItem('user') || sessionStorage.getItem('user'));
             if (user) {
                 const userId = JSON.parse(user)?._id;
                 setUserReview(res.data.find(r => r.customerId?._id === userId));

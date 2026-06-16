@@ -22,7 +22,7 @@ const Checkout = () => {
 
     useEffect(() => {
         // Attempt to prefill from user data if possible
-        const userStr = localStorage.getItem('user');
+        const userStr = (localStorage.getItem('user') || sessionStorage.getItem('user'));
         if (userStr) {
             const userData = JSON.parse(userStr);
             setFormData(prev => ({

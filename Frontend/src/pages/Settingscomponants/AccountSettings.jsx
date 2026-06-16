@@ -69,7 +69,7 @@ const AccountSettings = ({ userData, setUserData }) => {
                     user.email = editedData.email;
                     user.phone = editedData.phone;
 
-                    if (localStorage.getItem('user')) {
+                    if ((localStorage.getItem('user') || sessionStorage.getItem('user'))) {
                         localStorage.setItem('user', JSON.stringify(user));
                     }
                     if (sessionStorage.getItem('user')) {

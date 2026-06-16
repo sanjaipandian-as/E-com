@@ -43,7 +43,7 @@ const Adminlogin = () => {
         e.preventDefault();
         setError('');
 
-        const existingRole = sessionStorage.getItem('userRole') || localStorage.getItem('userRole');
+        const existingRole = sessionStorage.getItem('userRole') || (localStorage.getItem('userRole') || sessionStorage.getItem('userRole'));
         if (existingRole && existingRole !== 'admin') {
             toast.error(`Logged in as ${existingRole}. Please logout first.`);
             return;

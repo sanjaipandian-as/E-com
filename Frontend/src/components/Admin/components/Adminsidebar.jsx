@@ -22,7 +22,7 @@ const Adminsidebar = ({ onNavigate, activePage = 'Dashboard', onOpenUploadModal,
     const [adminInfo, setAdminInfo] = useState({ name: '', email: '' });
 
     useEffect(() => {
-        const user = localStorage.getItem('user');
+        const user = (localStorage.getItem('user') || sessionStorage.getItem('user'));
         if (user) {
             try {
                 const userData = JSON.parse(user);
@@ -50,7 +50,7 @@ const Adminsidebar = ({ onNavigate, activePage = 'Dashboard', onOpenUploadModal,
 
     const checkLoginExpiry = () => {
         const loginTime = localStorage.getItem('loginTime');
-        const userRole = localStorage.getItem('userRole');
+        const userRole = (localStorage.getItem('userRole') || sessionStorage.getItem('userRole'));
 
         if (loginTime && userRole === 'admin') {
             const currentTime = new Date().getTime();
